@@ -1,0 +1,96 @@
+# Byte-compiled files
+*.pyc
+*.pyo
+__pycache__/
+
+# Environment files
+.env
+venv/
+env/
+*.envrc
+
+# Model files and checkpoints
+*.h5
+*.ckpt
+*.pth
+*.pt
+*.onnx
+
+# Dataset and large files
+*.csv
+*.tsv
+*.json
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.hdf5
+*.npz
+*.pkl
+*.pickle
+*.db
+*.sqlite
+*.log
+data/
+
+# Experiment outputs
+logs/
+results/
+runs/
+output/
+checkpoints/
+weights/
+experiments/checkpoint/
+/lightning_logs/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+
+# Compiled or binary files
+*.so
+*.dll
+*.exe
+*.o
+*.out
+
+# TensorFlow/Torch caches
+__pycache__/
+tensorflow_model/
+torch_model/
+.cache/
+*.pb
+
+# Miscellaneous
+*.lock
+*.crt
+*.key
+*.pem
+*.spec
+
+# Avoid uploading large files to GitHub
+*.gz
+*.tar.gz
+*.zip
+*.tar.bz2
+*.rar
+*.7z
+
+# Custom exclusions (Optional)
+your_custom_folder/
+your_large_file_pattern*
