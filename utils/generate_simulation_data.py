@@ -2,14 +2,15 @@ import pandas as pd
 import numpy as np
 import random
 
-def generate_simulated_time_series(data, date_column, columns, n_tasks=4, resample_frequency='3D'):
+def generate_simulated_time_series(data, date_column, columns ,target_columns, n_tasks=4, resample_frequency='3D'):
     """
     Generate simulated time series data with resampling and random translations.
 
     Args:
         data_path (str): Path to the time series data CSV file.
         date_column (str): Name of the column containing datetime information.
-        columns (list): List of columns to apply transformations (e.g., forecasting targets).
+        columns (list): List of columns to apply random translations.
+        target_columns (list): List of target_columns to apply down sampling (e.g., forecasting targets).
         n_tasks (int): Number of tasks (splits) to create in the dataset.
         resample_frequency (str): Frequency for resampling (e.g., '3D' for 3 days).
 
@@ -22,8 +23,8 @@ def generate_simulated_time_series(data, date_column, columns, n_tasks=4, resamp
     data[date_column] = pd.to_datetime(data[date_column])
     data.set_index(date_column, inplace=True)
     
-    # Resample target columns
-    for column in columns:
+    # Resample target target_columns
+    for column in target_columns:
         resampled_column = data[column].resample(resample_frequency).mean()
         data[f"{column}_{resample_frequency}"] = resampled_column.reindex(data.index)
     

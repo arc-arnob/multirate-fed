@@ -44,6 +44,7 @@ class RossmanDataProcessor:
         self.data['Holiday'] = self.data.apply(
             lambda row: int(row['SchoolHoliday'] or row['StateHoliday']), axis=1
         )
+        self.data.reset_index(inplace=True)
 
         # Normalize numerical columns
         numerical_columns = ['Sales', 'Customers', 'Promo']
@@ -52,5 +53,5 @@ class RossmanDataProcessor:
         joblib.dump(scaler, 'rossman_scaler.pkl')
 
         # Define forecast columns
-        self.forecast_columns = ['Store', 'DayOfWeek', 'Promo', 'Holiday', 'Year', 'Month', 'WeekOfYear', 'Day', 'Sales', 'Customers']
+        self.forecast_columns = ['Sales']
         return self.forecast_columns
